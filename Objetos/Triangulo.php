@@ -5,8 +5,7 @@ include "FiguraGeometrica.php";
 class Triangulo extends FiguraGeometrica{
     public $lado2;
     public $lado3;
-    public $resA;
-    public $resP;
+   
 
     public function __construct($l2, $l3, $l1, $tipo){
         $this->lado2 = $l2;
@@ -16,7 +15,7 @@ class Triangulo extends FiguraGeometrica{
     }
 
     public function __toString(){
-        return "Este triangulo tiene un área de " . $this->resA . " cm y un perímetro de " . $this->resP . ".";
+        return "Este triangulo tiene un área de " . $this->CalcularArea() . " cm y un perímetro de " . $this->CalcularPerimetro() . ".";
     }
 
     function set_lado1($lado1){
@@ -31,12 +30,7 @@ class Triangulo extends FiguraGeometrica{
     function set_tipo($TipoFigura){
         $this->TipoFigura = $TipoFigura;
     }
-    function set_resA($resA){
-        $this->resA = $resA;
-    }
-    function set_resP($resP){
-        $this->resP = $resP;
-    }
+    
 
 
     function get_lado1(){
@@ -51,18 +45,12 @@ class Triangulo extends FiguraGeometrica{
     function get_tipo(){
         return $this->TipoFigura;
     }
-    function get_resA(){
-        return $this->resA;
-    }
-    function get_resP(){
-        return $this->resP;
-    }
+    
 
     function CalcularArea(){
         $l1 = $this->lado1;
         $l2 = $this->lado2;
         $l3 = $this->lado3;
-        $resA = $this->resA;
         $s = ($l1+$l2+$l3)/2;
         $resA = sqrt($s*($s-$l1)*($s-$l2)*($s-$l3));
         return $resA;
@@ -72,7 +60,6 @@ class Triangulo extends FiguraGeometrica{
         $l1 = $this->lado1;
         $l2 = $this->lado2;
         $l3 = $this->lado3;
-        $resP = $this->resP;
         $resP = $l1+$l2+$l3;
         return $resP;
     }

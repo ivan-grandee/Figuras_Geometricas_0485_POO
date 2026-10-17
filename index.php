@@ -11,7 +11,7 @@
 
     <h3>Dime, ¿Con que figura quieres trabajar?</h3>
 
-    <form action>
+    <form action="datos_figura.php" method ="post">
         <select id="figura" name="figura">
             <option value="" selected disabled>Selecciona alguna figura</option>
             <option value="Cuadrado">Cuadrado</option>
@@ -23,9 +23,6 @@
         <br>
         <input type="submit" value="Seleccionar figura" name="Figura_seleccionada"> 
     </form>
-
-    
-
 
 <script src= "validacionIndex.js"></script>
 </body>
