@@ -3,7 +3,7 @@ include "FiguraGeometrica.php";
 
 class Cuadrado extends FiguraGeometrica{
 
-    public function _costruct($l1, $tipo){
+    public function __construct($l1, $tipo){
         $this->lado1 = $l1;
         $this->TipoFigura = $tipo;
     }

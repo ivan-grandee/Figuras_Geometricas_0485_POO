@@ -1,29 +1,43 @@
+<?php
+require_once __DIR__ . '/php/figuras.php';
 
+$figuraSel = $_SESSION['figura'] ?? '';
+$errorIndex = $_SESSION['errorIndex'] ?? '';
+unset($_SESSION['errorIndex']);
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figuras Geométricas</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <h1>Figuras Geométricas</h1>
+    <header class="cabecera">
+        <span> Figuras Geométricas</span>
+    </header>
 
-    <h3>Dime, ¿Con que figura quieres trabajar?</h3>
+    <main class="tarjeta">
+        <h1>Figuras Geométricas</h1>
+        <h3>Dime, ¿con qué figura quieres trabajar?</h3>
 
-    <form action="datos_figura.php" method ="post">
-        <select id="figura" name="figura">
-            <option value="" selected disabled>Selecciona alguna figura</option>
-            <option value="Cuadrado">Cuadrado</option>
-            <option value="Rectangulo">Rectángulo</option>
-            <option value="Triangulo">Triangulo</option>
-            <option value="Circulo">Circulo</option>
-        </select>
-        <br>
-        <br>
-        <input type="submit" value="Seleccionar figura" name="Figura_seleccionada"> 
-    </form>
+        <form id="formFigura" action="php/validacionIndex.php" method="post" novalidate>
+            <label for="figura">Figura</label>
+            <select id="figura" name="figura">
+                <option value="" <?= $figuraSel === '' ? 'selected' : '' ?>>Selecciona alguna figura</option>
+                <?php foreach ($FIGURAS as $clave => $nombre): ?>
+                    <option value="<?= e($clave) ?>" <?= $figuraSel === $clave ? 'selected' : '' ?>>
+                        <?= e($nombre) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <span class="error" id="error-figura"><?= e($errorIndex) ?></span>
 
-<script src= "validacionIndex.js"></script>
+            <input type="submit" value="Seleccionar figura" name="Figura_seleccionada">
+        </form>
+    </main>
+
+    <script src="js/validacionIndex.js"></script>
 </body>
 </html>

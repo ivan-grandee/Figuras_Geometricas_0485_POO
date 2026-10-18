@@ -5,7 +5,7 @@ class Rectangulo extends FiguraGeometrica{
     public $lado2;
     
 
-    public function _costruct($l2, $l1, $tipo){
+    public function __construct($l2, $l1, $tipo){
         $this->lado2 = $l2;
         $this->lado1 = $l1;
         $this->TipoFigura = $tipo;

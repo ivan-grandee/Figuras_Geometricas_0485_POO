@@ -4,7 +4,7 @@ include "FiguraGeometrica.php";
 class Circulo extends FiguraGeometrica{
     
 
-    public function __costruct($lado1, $tipo){
+    public function __construct($lado1, $tipo){
         $this->lado1 = $lado1;
         $this->TipoFigura = $tipo;
     }
