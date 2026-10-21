@@ -1,7 +1,10 @@
 
 // Cuadrado y circulo
 function validarLado(){    
-    lado = document.getElementById("lado")
+    lado = document.getElementById("lado");
+    if(lado = 0){
+        
+    }
 }
 
 

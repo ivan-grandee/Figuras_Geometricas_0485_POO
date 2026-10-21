@@ -1,6 +1,6 @@
 <?php
 // Recibe la figura elegida en index.php, la valida y la guarda en sesión.
-require_once __DIR__ . '/../includes/figuras.php';
+require  'figuras.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ../index.php');

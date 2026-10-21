@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/php/figuras.php';
+include "/php/figuas.php";
 
 $figuraSel = $_SESSION['figura'] ?? '';
 $errorIndex = $_SESSION['errorIndex'] ?? '';
@@ -15,11 +15,10 @@ unset($_SESSION['errorIndex']);
 </head>
 <body>
     <header class="cabecera">
-        <span> Figuras Geométricas</span>
+        <h1> Figuras Geométricas</h1>
     </header>
 
     <main class="tarjeta">
-        <h1>Figuras Geométricas</h1>
         <h3>Dime, ¿con qué figura quieres trabajar?</h3>
 
         <form id="formFigura" action="php/validacionIndex.php" method="post" novalidate>
@@ -32,10 +31,10 @@ unset($_SESSION['errorIndex']);
                     </option>
                 <?php endforeach; ?>
             </select>
-            <span class="error" id="error-figura"><?= e($errorIndex) ?></span>
-
             <input type="submit" value="Seleccionar figura" name="Figura_seleccionada">
         </form>
+        <span class="error" id="error-figura"><?= e($errorIndex) ?></span>
+
     </main>
 
     <script src="js/validacionIndex.js"></script>

@@ -15,8 +15,8 @@ $FIGURAS = [
 
 // campos que se piden de cada figura: nombre del input => etiqueta
 $CAMPOS = [
-    'Cuadrado'   => ['lado1' => 'Lado'],
-    'Rectangulo' => ['lado1' => 'Base', 'lado2' => 'Altura'],
+    'Cuadrado'   => ['lado1' => 'Un lado'],
+    'Rectangulo' => ['lado1' => 'La base', 'lado2' => 'La altura'],
     'Triangulo'  => ['lado1' => 'Lado 1', 'lado2' => 'Lado 2', 'lado3' => 'Lado 3'],
     'Circulo'    => ['lado1' => 'Radio'],
 ];
