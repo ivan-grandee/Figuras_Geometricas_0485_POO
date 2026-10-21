@@ -1,18 +1,18 @@
 <?php
-include "FiguraGeometrica.php";
+require_once __DIR__ . '/FiguraGeometrica.php';
 
 class Rectangulo extends FiguraGeometrica{
     public $lado2;
     
 
-    public function __construct($l2, $l1, $tipo){
-        $this->lado2 = $l2;
-        $this->lado1 = $l1;
-        $this->TipoFigura = $tipo;
+    public function __construct($l1, $l2, $tipo){
+    $this->lado1 = $l1;
+    $this->lado2 = $l2;
+    $this->TipoFigura = $tipo;
     }
 
     public function __toString(){
-        return "Este rectangulo tiene un área de " . $this->CalcularArea() . " cm y un perímetro de " . $this->CalcularPerimetro() . ".";
+        return "Este rectangulo tiene un área de " . $this->CalcularArea() . " y un perímetro de " . $this->CalcularPerimetro() . ".";
     }
 
     function set_lado2($lado2){
@@ -51,7 +51,7 @@ class Rectangulo extends FiguraGeometrica{
         return $resP;
     }
 
-    function __desctruct(){
+    function __destruct(){
 
     }
 

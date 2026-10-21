@@ -8,6 +8,8 @@ if (!array_key_exists($figura, $FIGURAS)) {
     exit;
 }
 
+// comprueba si la figura que se recibe esta dentro del array de FIGURAS
+
 $errorDatos = $_SESSION['errorDatos'] ?? '';
 unset($_SESSION['errorDatos']);
 ?>

@@ -1,21 +1,21 @@
 <?php
 
-include "FiguraGeometrica.php";
-
+require_once __DIR__ . '/FiguraGeometrica.php';
+//  Si no al calbiar de figura da error porque se guarda la anterior
 class Triangulo extends FiguraGeometrica{
     public $lado2;
     public $lado3;
    
 
-    public function __construct($l2, $l3, $l1, $tipo){
-        $this->lado2 = $l2;
-        $this->lado3 = $l3;
-        $this->lado1 = $l1;
-        $this->TipoFigura = $tipo;
+    public function __construct($l1, $l2, $l3, $tipo){
+    $this->lado1 = $l1;
+    $this->lado2 = $l2;
+    $this->lado3 = $l3;
+    $this->TipoFigura = $tipo;
     }
 
     public function __toString(){
-        return "Este triangulo tiene un área de " . $this->CalcularArea() . " cm y un perímetro de " . $this->CalcularPerimetro() . ".";
+        return "Este triangulo tiene un área de " . $this->CalcularArea() . " y un perímetro de " . $this->CalcularPerimetro() . ".";
     }
 
     function set_lado1($lado1){

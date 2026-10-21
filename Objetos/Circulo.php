@@ -1,6 +1,5 @@
 <?php
-include "FiguraGeometrica.php";
-
+require_once __DIR__ . '/FiguraGeometrica.php';
 class Circulo extends FiguraGeometrica{
     
 
@@ -10,7 +9,7 @@ class Circulo extends FiguraGeometrica{
     }
 
     public function __toString(){
-        return "Este círculo tiene un área de " . $this->CalcularArea() . " cm y un perímetro de " . $this->CalcularPerimetro() . ".";
+        return "Este círculo tiene un área de " . $this->CalcularArea() . " y un perímetro de " . $this->CalcularPerimetro() . ".";
     }
 
     function set_lado1($lado1){
@@ -32,7 +31,7 @@ class Circulo extends FiguraGeometrica{
 
     function CalcularArea(){
         $lado1 = $this->lado1;
-        $resA = M_PI*$lado1^2;
+        $resA = M_PI*$lado1**2;
         return $resA;
     }
 
@@ -42,7 +41,7 @@ class Circulo extends FiguraGeometrica{
         return $resP;
     }
 
-    function __desctruct(){
+    function __destruct(){
         
     }
 

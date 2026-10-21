@@ -1,5 +1,5 @@
 <?php
-include "FiguraGeometrica.php";
+require_once __DIR__ . '/FiguraGeometrica.php';
 
 class Cuadrado extends FiguraGeometrica{
 
@@ -9,7 +9,7 @@ class Cuadrado extends FiguraGeometrica{
     }
 
     public function __toString(){
-        return "Este cuadrado tiene un área de " . $this->CalcularArea() . " cm y un perímetro de " . $this->CalcularPerimetro() . ".";
+        return "Este cuadrado tiene un área de " . $this->CalcularArea() . " y un perímetro de " . $this->CalcularPerimetro() . ".";
     }
 
     function set_lado1($lado1){
@@ -31,7 +31,7 @@ class Cuadrado extends FiguraGeometrica{
 
     function CalcularArea(){
         $lado1 = $this->lado1;
-        $resA = $lado1^2;
+        $resA = $lado1**2;
         return $resA;
     }
 
@@ -41,7 +41,7 @@ class Cuadrado extends FiguraGeometrica{
         return $resP;
     }
 
-    function __desctruct(){
+    function __destruct(){
         
     }
 
