@@ -63,3 +63,11 @@
 
 
 // DATOS CIRCULO
+
+
+
+
+
+
+header('Location: ../resultado.php');
+exit;

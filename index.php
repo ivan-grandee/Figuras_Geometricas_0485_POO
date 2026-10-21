@@ -1,5 +1,5 @@
 <?php
-include "/php/figuas.php";
+require_once __DIR__ . '/php/figuras.php';
 
 $figuraSel = $_SESSION['figura'] ?? '';
 $errorIndex = $_SESSION['errorIndex'] ?? '';

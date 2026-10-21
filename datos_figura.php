@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ .'figuras.php';
+require_once __DIR__ . '/php/figuras.php';
 
 // Si alguien entra directamente sin haber elegido figura, lo mandamos al index
 $figura = $_SESSION['figura'] ?? '';
@@ -22,7 +22,7 @@ unset($_SESSION['errorDatos']);
 <body>
     <h1>Como has seleccionado un <?= e($FIGURAS[$figura]) ?> necesito que me des los siguientes datos:</h1>
 
-    <form id="formDatos" action="php/procesar_datos.php" method="post" novalidate>
+    <form id="formDatos" action="php/validaDatos.php" method="post" novalidate>
         <?php foreach ($CAMPOS[$figura] as $name => $etiqueta): ?>
             <label for="<?= e($name) ?>"><?= e($etiqueta) ?></label>
             <input type="number" id="<?= e($name) ?>" name="<?= e($name) ?>" step="any" min="0">
