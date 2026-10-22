@@ -14,4 +14,4 @@ function figulaSelec() {
     return true;
 }
 
-document.getElementById("formFigura").onsubmit = figulaSelec;
+document.getElementById("formFigura").onmouseleave = figulaSelec;
