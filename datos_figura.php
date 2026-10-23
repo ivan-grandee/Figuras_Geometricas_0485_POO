@@ -22,19 +22,21 @@ unset($_SESSION['errorDatos']);
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
+    <main class="tarjeta">
     <h1>Como has seleccionado un <?= e($FIGURAS[$figura]) ?> necesito que me des los siguientes datos:</h1>
 
     <form id="formDatos" action="php/validaDatos.php" method="post" novalidate>
         <?php foreach ($CAMPOS[$figura] as $name => $etiqueta): ?>
-            <label for="<?= e($name) ?>"><?= e($etiqueta) ?></label>
+            <label for="<?= e($name) ?>"><?= e($etiqueta) ?> en cm</label>
             <input type="number" id="<?= e($name) ?>" name="<?= e($name) ?>" step="any" min="0">
             <span class="error" id="error-<?= e($name) ?>"></span>
-            <br>
         <?php endforeach; ?>
 
         <span class="error"><?= e($errorDatos) ?></span>
         <input type="submit" value="Calcular">
     </form>
+    <p class="boton"><a href="index.php">Elegir otra figura</a></p>
+    </main>
     <script src="js/validaDatos.js"></script>
 
 </body>

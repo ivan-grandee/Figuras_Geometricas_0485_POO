@@ -14,7 +14,7 @@ if (!array_key_exists($figura, $FIGURAS) || empty($datos)) {
     exit;
 }
 
-// Ojo: cada constructor tiene su propio orden de parámetros
+//cada constructor tiene su propio orden de parámetros
 if ($figura === 'Cuadrado') {
     $obj = new Cuadrado($datos['lado1'], $figura);
 } elseif ($figura === 'Rectangulo') {
@@ -26,7 +26,7 @@ if ($figura === 'Cuadrado') {
 }
 
 $_SESSION['resultado'] = [
-    'mensaje'   => (string) $obj,   // usa tu __toString
+    'mensaje'   => (string) $obj,
     'area'      => $obj->CalcularArea(),
     'perimetro' => $obj->CalcularPerimetro(),
 ];
